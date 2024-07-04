@@ -1,5 +1,5 @@
 ### Obter token JWT
-POST http://localhost:3000/login
+POST http://localhost:3009/login
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### Criar categoria
-POST http://localhost:3000/categorias
+POST http://localhost:3009/categorias
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjAwMzY1NjksImV4cCI6MTcyMDA0MDE2OX0.mohOqnN0u89R15Bk6lFY2yk_K4RgubluRrPkztou-D8
 
@@ -18,11 +18,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpb
 }
 
 ### Obter todas as categorias
-GET http://localhost:3000/categorias
+GET http://localhost:3009/categorias
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjAwMzY4ODUsImV4cCI6MTcyMDA0MDQ4NX0.wc1s7Yc-oxCLqTzOxE_3z8P2zAE-MRXE-i3DT5_XDUw
 
 ### Obter categoria por ID
-GET http://localhost:3000/categorias/1
+GET http://localhost:3009/categorias/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjAwMzY1NjksImV4cCI6MTcyMDA0MDE2OX0.mohOqnN0u89R15Bk6lFY2yk_K4RgubluRrPkztou-D8
 
 ### Atualizar Categoria
