@@ -1,0 +1,19 @@
+### Registro de usuário
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "usuario": "b",
+    "password": "b",
+    "descricao": "usuario teste"
+}
+
+### Login do usuário
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "usuario": "b",
+    "password": "b"
+}
+

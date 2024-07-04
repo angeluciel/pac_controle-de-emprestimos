@@ -1,0 +1,28 @@
+### Obter token JWT
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "usuario": "b",
+    "password": "b"
+}
+
+### Criar categoria
+POST http://localhost:3000/categorias
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjAwMzY1NjksImV4cCI6MTcyMDA0MDE2OX0.mohOqnN0u89R15Bk6lFY2yk_K4RgubluRrPkztou-D8
+
+{
+    "nome": "Eletronicos",
+    "descricao": "Itens eletronicos variados"
+}
+
+### Obter todas as categorias
+GET http://localhost:3000/categorias
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjAwMzY4ODUsImV4cCI6MTcyMDA0MDQ4NX0.wc1s7Yc-oxCLqTzOxE_3z8P2zAE-MRXE-i3DT5_XDUw
+
+### Obter categoria por ID
+GET http://localhost:3000/categorias/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjAwMzY1NjksImV4cCI6MTcyMDA0MDE2OX0.mohOqnN0u89R15Bk6lFY2yk_K4RgubluRrPkztou-D8
+
+### Atualizar Categoria
