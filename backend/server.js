@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const Usuario = require('./models/Usuario');
 require('dotenv').config();
 
@@ -12,6 +13,7 @@ const itemRoutes = require('./routes/itemRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 // Conectar ao banco de dados

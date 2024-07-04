@@ -16,6 +16,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuth } from "../eventBus.js";
+import api from '@/api';
 
 export default {
   setup() {
@@ -25,17 +26,30 @@ export default {
     const mensagem = ref('');
     const router = useRouter();
 
-    const entrar = () => {
-      if (usuario.value === "a" && senha.value === "a") {
-        window.dispatchEvent(new CustomEvent('autenticar', { detail: true }));
-      
-        auth.autenticado = true;
+    const entrar = async () => {
+      try {
+        const response = await api.post('/login', {
+          usuario: usuario.value,
+          password: senha.value,
+        });
 
-        const destino = router.currentRoute.value.query.redirecionar || "/emprestimos";
-        router.push(destino);
-        return;
+        if (response.data.token) {
+          window.dispatchEvent(new CustomEvent('autenticar', { detail: true }));
+          auth.autenticado = true;
+
+          // Armazene o token no localStorage
+          localStorage.setItem('token', response.data.token);
+
+          const destino = router.currentRoute.value.query.redirecionar || "/emprestimos";
+          router.push(destino);
+        } else {
+          mensagem.value = "Dados incorretos!";
+        }
+      } catch (error) {
+        mensagem.value = "Erro ao fazer login: " + (error.response?.data?.message || error.message);
       }
-      mensagem.value = "Dados incorretos!";
+
+      // Limpar mensagem e campos após 3 segundos
       setTimeout(() => {
         mensagem.value = '';
         usuario.value = '';

@@ -3,9 +3,9 @@ POST http://localhost:3009/register
 Content-Type: application/json
 
 {
-    "usuario": "b",
-    "password": "b",
-    "descricao": "usuario teste"
+    "usuario": "d",
+    "password": "d",
+    "descricao": "usuario teste4"
 }
 
 ### Login do usuário
@@ -13,7 +13,6 @@ POST http://localhost:3009/login
 Content-Type: application/json
 
 {
-    "usuario": "b",
-    "password": "b"
+    "usuario": "d",
+    "password": "d"
 }
-
