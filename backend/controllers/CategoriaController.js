@@ -5,7 +5,7 @@ const getAllCategorias = async (req, res) => {
     const categorias = await Categoria.findAll();
     res.json(categorias);
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao buscar categorias.' });
+    res.status(500).json({ message: 'Erro no controller de categorias.' });
   }
 };
 

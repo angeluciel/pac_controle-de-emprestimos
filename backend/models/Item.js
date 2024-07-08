@@ -2,6 +2,9 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 const Item = sequelize.define('Item', {
+  id: {
+    type: DataTypes.INTEGER
+  },
   name: {
     type: DataTypes.STRING,
   },
@@ -16,11 +19,11 @@ const Item = sequelize.define('Item', {
     type: DataTypes.TEXT,
   },
   status: {
-    type: DataTypes.ENUM('disponível', 'emprestado', 'indisponível'),
-    defaultValue: 'disponível',
+    type: DataTypes.ENUM('disponivel', 'emprestado', 'indisponivel'),
+    defaultValue: 'disponivel',
   },
 }, {
-  tableName: 'items',
+  tableName: 'itens',
   timestamps: false,
 });
 

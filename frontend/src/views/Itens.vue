@@ -15,6 +15,7 @@
 import { defineComponent } from "vue";
 import Tabela from "../components/Tabela.vue";
 import NavBar from "../components/NavBar.vue";
+import api from "@/api";
 
 export default defineComponent({
   components: {
@@ -44,33 +45,20 @@ export default defineComponent({
   },
 
   methods: {
-    initialize() {
-      this.desserts = [
-        {
-          item: "Carrinho #12abcd",
-          categoria: "Carrinhos",
-          descricao: "Rodas grandes, amarelo",
-          status: "Disponível",
-        },
-        {
-          item: "Carrinho elétrico",
-          categoria: "Carrinhos",
-          descricao: "Conectado a tomada",
-          status: "Emprestado",
-        },
-        {
-          item: "Cabo HDMI",
-          categoria: "Cabos",
-          descricao: "",
-          status: "Indisponível",
-        },
-        {
-          item: "Monitor Simples",
-          categoria: "Hardware",
-          descricao: "Da marca LG, 35 polegadas",
-          status: "Indisponível",
-        },
-      ];
+    async initialize() {
+      try {
+        const response = await api.get('/itens');
+        const itens = response.data;
+
+        this.desserts = itens.map(item => ({
+          item: item.nome,
+          categoria: item.Categoria.nome,
+          descricao: item.descricao,
+          status: item.status,
+        }));
+      } catch (error) {
+        console.error('Erro ao buscar itens:', error);
+      }
     },
   },
 });

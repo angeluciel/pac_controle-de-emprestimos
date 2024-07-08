@@ -15,6 +15,7 @@
 import { defineComponent } from "vue";
 import Tabela from "../components/Tabela.vue";
 import NavBar from "../components/NavBar.vue";
+import api from "@/api";
 
 export default defineComponent({
   components: {
@@ -44,39 +45,20 @@ export default defineComponent({
   },
 
   methods: {
-    initialize() {
-      this.desserts = [
-        {
-          perfil: "João da Silva",
-          emprestimos_ativos: 2,
-          descricao: "Aluno de eng. de software",
-          pendencias: "Ok",
-        },
-        {
-          perfil: "Pedro Pereira",
-          emprestimos_ativos: 1,
-          descricao: "Professor de eng. mecânica",
-          pendencias: "Verificar",
-        },
-        {
-          perfil: "Maria Mariazinha",
-          emprestimos_ativos: 5,
-          descricao: "Bolsista Wickedbotz",
-          pendencias: "Verificar",
-        },
-        {
-          perfil: "Clóvis Cleiton",
-          emprestimos_ativos: 0,
-          descricao: "Aluno de eng. elétrica",
-          pendencias: "Ok",
-        },
-        {
-          perfil: "Ana Anao",
-          emprestimos_ativos: 3,
-          descricao: "Professora de eng. mecatrônica",
-          pendencias: "Verificar",
-        },
-      ];
+    async initialize() {
+      try {
+        const response = await api.get('/usuarios');
+        const usuarios = response.data;
+        
+        this.desserts = usuarios.map(user => ({
+          perfil: user.usuario,
+          emprestimos_ativos: user.emprestimos_ativos || 0,
+          descricao: user.descricao,
+          pendencias: user.pendencias || "Ok",
+        }));
+      } catch (error) {
+        console.error('Erro ao buscar perfis:', error);
+      }
     },
   },
 });

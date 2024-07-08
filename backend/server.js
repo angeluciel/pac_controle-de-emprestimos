@@ -57,7 +57,7 @@ app.post('/login', async (req, res) => {
 // Rotas CRUD
 app.use('/categorias', categoriaRoutes);
 app.use('/emprestimos', emprestimoRoutes);
-app.use('/items', itemRoutes);
+app.use('/itens', itemRoutes);
 app.use('/usuarios', usuarioRoutes);
 
 // Iniciar o servidor

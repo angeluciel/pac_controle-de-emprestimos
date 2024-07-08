@@ -3,10 +3,9 @@ const Categoria = require('../models/Categoria');
 
 const getAllItems = async (req, res) => {
   try {
-    const items = await Item.findAll({
-      include: Categoria
+    const itens = await Item.findAll({
     });
-    res.json(items);
+    res.json(itens);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao buscar itens.' });
   }
