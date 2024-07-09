@@ -53,7 +53,7 @@ export default defineComponent({
 
         this.desserts = itens.map(item => ({
           item: item.nome,
-          categoria: item.Categoria ? item.Categoria.nome : 'Sem Categoria',
+          categoria: item.Categorium ? item.Categorium.nome : 'Sem Categoria',
           descricao: item.descricao,
           status: item.status,
         }));

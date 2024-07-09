@@ -1,8 +1,14 @@
 const Categoria = require('../models/Categoria');
+const Item = require('../models/Item');
 
 const getAllCategorias = async (req, res) => {
   try {
-    const categorias = await Categoria.findAll();
+    const categorias = await Categoria.findAll({
+      include: [{
+        model: Item,
+        required: true
+      }]
+    });
     res.json(categorias);
   } catch (error) {
     res.status(500).json({ message: 'Erro no controller de categorias.' });
