@@ -48,11 +48,12 @@ export default defineComponent({
     async initialize() {
       try {
         const response = await api.get('/itens');
+        console.log(response.data);
         const itens = response.data;
 
         this.desserts = itens.map(item => ({
           item: item.nome,
-          categoria: item.Categoria.nome,
+          categoria: item.Categoria ? item.Categoria.nome : 'Sem Categoria',
           descricao: item.descricao,
           status: item.status,
         }));

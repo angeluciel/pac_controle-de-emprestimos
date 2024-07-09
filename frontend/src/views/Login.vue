@@ -37,7 +37,6 @@ export default {
           window.dispatchEvent(new CustomEvent('autenticar', { detail: true }));
           auth.autenticado = true;
 
-          // Armazene o token no localStorage
           localStorage.setItem('token', response.data.token);
 
           const destino = router.currentRoute.value.query.redirecionar || "/emprestimos";
@@ -49,7 +48,6 @@ export default {
         mensagem.value = "Erro ao fazer login: " + (error.response?.data?.message || error.message);
       }
 
-      // Limpar mensagem e campos após 3 segundos
       setTimeout(() => {
         mensagem.value = '';
         usuario.value = '';
@@ -68,4 +66,5 @@ export default {
     return { usuario, senha, mensagem, entrar, firstNameRules, lastNameRules };
   },
 };
+
 </script>
