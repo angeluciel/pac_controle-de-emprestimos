@@ -28,9 +28,9 @@ const getItemById = async (req, res) => {
 };
 
 const createItem = async (req, res) => {
-  const { name, id_categoria, descricao, status } = req.body;
+  const { nome, id_categoria, descricao, status } = req.body;
   try {
-    const newItem = await Item.create({ name, id_categoria, descricao, status });
+    const newItem = await Item.create({ nome, id_categoria, descricao, status });
     res.json(newItem);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao criar item.' });
@@ -39,11 +39,11 @@ const createItem = async (req, res) => {
 
 const updateItem = async (req, res) => {
   const { id } = req.params;
-  const { name, id_categoria, descricao, status } = req.body;
+  const { nome, id_categoria, descricao, status } = req.body;
   try {
     const item = await Item.findByPk(id);
     if (item) {
-      item.name = name;
+      item.nome = nome;
       item.id_categoria = id_categoria;
       item.descricao = descricao;
       item.status = status;

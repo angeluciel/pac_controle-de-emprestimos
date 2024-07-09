@@ -17,9 +17,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Conectar ao banco de dados
-sequelize.authenticate().then(() => {
+sequelize.authenticate()
+  .then(() => {
   console.log('Conectado ao banco de dados.');
-}).catch((err) => {
+})
+  .catch((err) => {
   console.error('Erro ao conectar ao banco de dados:', err);
 });
 

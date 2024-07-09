@@ -3,10 +3,13 @@ const sequelize = require('../config/database');
 
 const Item = sequelize.define('Item', {
   id: {
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
   },
-  name: {
+  nome: {
     type: DataTypes.STRING,
+    alowNull: false
   },
   id_categoria: {
     type: DataTypes.INTEGER,

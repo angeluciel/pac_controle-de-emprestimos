@@ -1,6 +1,6 @@
 POST http://localhost:3009/itens
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjA0NzM2MDEsImV4cCI6MTcyMDQ3NzIwMX0.Pb2aBnyH8I_dvPKW1VveQYkJ0SWRMVaeOuJ-QfHsFhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjA1MzQ3NjksImV4cCI6MTcyMDUzODM2OX0.m-TUQry6uVenjp9kf2cgAq14ISSxjKBLGG2cdkQtjUg
 
 {
     "nome": "Moto Eletrica",
@@ -11,6 +11,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpb
 
 ### Obter todos os itens
 GET http://localhost:3009/itens
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjA0NzM3ODcsImV4cCI6MTcyMDQ3NzM4N30.e1_xx-X2JEtzFiS3_5lBsIAdq1fXCKybH7LXGWvCXWI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjA1MzQ3NjksImV4cCI6MTcyMDUzODM2OX0.m-TUQry6uVenjp9kf2cgAq14ISSxjKBLGG2cdkQtjUg
 
 ### 
