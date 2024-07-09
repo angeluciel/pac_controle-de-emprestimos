@@ -32,7 +32,7 @@ const Item = sequelize.define('Item', {
   timestamps: false,
 });
 
-Item.belongsTo(Categoria, { foreignKey: 'id_categoria'});
+Item.belongsTo(Categoria, { foreignKey: 'id_categoria', as: 'categoria'});
 Categoria.hasMany(Item, { foreignKey: 'id_categoria'});
 
 module.exports = Item;

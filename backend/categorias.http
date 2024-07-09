@@ -19,7 +19,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpb
 
 ### Obter todas as categorias
 GET http://localhost:3009/categorias
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjA0NzIyNzYsImV4cCI6MTcyMDQ3NTg3Nn0.EmMMjAyioZpALfEDKTaf6CHiyjLxCopiM66s7fgqN4Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXN1YXJpbyI6ImIiLCJpYXQiOjE3MjA1NTQ1MjcsImV4cCI6MTcyMDU1ODEyN30.6BnmL7JDchT_YH5QoUukKQzvf9GKa4UdnCCjWUuyG0A
 
 ### Obter categoria por ID
 GET http://localhost:3009/categorias/1

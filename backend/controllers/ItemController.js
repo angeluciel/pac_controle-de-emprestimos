@@ -4,7 +4,10 @@ const Categoria = require('../models/Categoria');
 const getAllItems = async (req, res) => {
   try {
     const itens = await Item.findAll({
-      include: [{ model: Categoria}]
+      include: { 
+        model: Categoria,
+        as: 'categoria',
+      }
     });
     res.json(itens);
   } catch (error) {
